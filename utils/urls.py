@@ -13,5 +13,8 @@ urlpatterns = [
     path('interns/', views.intern_list),
     path('interns/<int:pk>/', views.intern_detail),
     path('all_Internship_Interns/<int:Internship_id>/', views.all_Internship_Interns),
+    path('user_code_view/', views.user_code_view, name='user_code_view'),
+
+
 
 ]

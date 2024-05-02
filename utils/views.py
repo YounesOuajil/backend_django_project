@@ -146,7 +146,6 @@ def intern_detail(request, pk):
 @api_view(['GET'])
 def all_Internship_Interns(request, Internship_id):
     try:
-       
         internship = Internship.objects.get(pk=Internship_id)
         interns = Intern.objects.filter(internships=internship)
         serializer = InternSerializer(interns, many=True)
@@ -169,7 +168,9 @@ def start_scraping(request, Internship_id):
 
 
 
+@api_view(['POST'])
+def user_code_view(request):
+    user_code = request.data.get('user_code')
+    print("User Code:", user_code)
+    return Response({"user_code": user_code})
 
-def userCode(user_code):
-    print(user_code)
-    return(user_code)
